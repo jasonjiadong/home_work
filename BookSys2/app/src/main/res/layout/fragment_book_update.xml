@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isAdd"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="book"
+            type="com.example.booksys2.bean.BookItemBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        tools:context=".fragment.BookUpdateFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/text_height_center"
+            android:layout_marginTop="50dp"
+            android:text="Book Name："
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            style="@style/text_height_center"
+            android:text="describe:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            style="@style/text_height_center"
+            android:text="Author:"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="tv_name,tv_desc,tv_author" />
+        <EditText
+            android:id="@+id/et_name_value"
+            style="@style/edit_height_center"
+            android:hint="请输入书名"
+            android:text="@{isAdd ? @string/empty_string : book.title}"
+            app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+        <EditText
+            android:id="@+id/et_desc_value"
+            style="@style/edit_height_center"
+            android:hint="请录入简介"
+            android:text="@{isAdd ? @string/empty_string: book.description}"
+            app:layout_constraintTop_toTopOf="@id/tv_desc" />
+
+        <EditText
+            android:id="@+id/et_author_value"
+            style="@style/edit_height_center"
+            android:hint="请录入作者"
+            android:text="@{isAdd ? @string/empty_string : book.author}"
+            app:layout_constraintTop_toTopOf="@id/tv_author" />
+
+       <!-- <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{isAdd ? View.VISIBLE : View.GONE }"
+            app:constraint_referenced_ids="et_name_value,et_desc_value,et_author_value" />-->
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="100dp"
+            android:text="提交"
+            android:id="@+id/btn_update"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

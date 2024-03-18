@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_height_center">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="text_right_height_center">
+        <item name="android:layout_width">0dp</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toEndOf">@id/barrier</item>
+    </style>
+
+    <style name="edit_height_center">
+        <item name="android:layout_width">0dp</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintStart_toEndOf">@id/barrier</item>
+    </style>
+    <style name="edit_height_center_width">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">8dp</item>
+    </style>
+</resources>

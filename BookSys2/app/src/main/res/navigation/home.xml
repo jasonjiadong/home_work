@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.example.booksys2.fragment.BookListFragment"
+        android:label="fragment_book_list"
+        tools:layout="@layout/fragment_book_list" >
+        <action
+            android:id="@+id/action_bookListFragment_to_bookUpdateFragment"
+            app:destination="@id/bookUpdateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookUpdateFragment"
+        android:name="com.example.booksys2.fragment.BookUpdateFragment"
+        android:label="fragment_book_update"
+        tools:layout="@layout/fragment_book_update" />
+</navigation>
